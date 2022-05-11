@@ -4,6 +4,7 @@ module.exports = {
         "es2021": true
     },
     "extends": "plugin:react/recommended",
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -12,11 +13,12 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "@typescript-eslint"
     ],
     "rules": {
-        "semi": "error",
-        "quotes": "error",
+        "semi": ["warn", "always"], // セミコロンがないと警告
+        "quotes": ["error", "double"], // ダブルクォーテーションじゃないとエラー
         "react/prop-types": "off",
     }
 };
